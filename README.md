@@ -1,22 +1,22 @@
-Problēmas apkasts:
+Problems in the neighbourhood:
 
-Informāciju par uzņēmuma darbinieku algām glabājās speciālajā grāmatvedības programmā. Analītikas nodaļa katru mēnesi analīzē uzņēmuma darbību un arī informāciju par darbinieku algām.
+The salary information of the company's employees was stored in a special accounting software. The analytics department analyses the company's performance and the salary information on a monthly basis.
 
-Uzņēmums, lai samazinātu informācijas noplūdes risku ir pieņēmis lēmums, ka datu analītiķiem tiek nodrošināta tikai viņiem nepieciešama informācija. Rezultātā no grāmatvedības programmatūras tika eksportēta Excel datne salary.xlsx, kur klienta vārds un uzvārds ir kodēts izmantojot uzņēmuma izstrādāto kodēšanas algoritmu.
+To reduce the risk of information leakage, the company has decided that data analysts are only provided with the information they need. As a result, an Excel file salary.xlsx was exported from the accounting software, where the client's name is encoded using an encoding algorithm developed by the company.
 
-Sistēmas kļūdas dēļ vienā dienā uzņēmums ir pazaudējis piekļuvi grāmatvedības sistēmā esošajiem datiem par pēdēja mēneša darbinieku algām.
+Due to a system error, the company lost access to the last month's salary data in the accounting system in one day.
 
-IT nodaļa risinot problēmu ir konstatējusi, ka dati sistēmā vairs nav pieejami, bet ir pieejama pēdējā analītikas nodaļai sagatavota datne salary.xlsx, kas ietver darbinieka pilnā vārda kodējuma numuru un algu. Diemžēl datnē saglabāts darbinieka vārds ir kodēts, izmantojot kodēšanas algoritmu, kas neļauj atkodēt vārdu atpakaļ.
+The IT department has resolved the problem and found that the data is no longer available in the system, but the last salary.xlsx file produced for the analytics department is available, containing the employee's full name coding number and salary. Unfortunately, the employee's name saved in the file is encoded using an encoding algorithm that does not allow the name to be decoded back.
 
-Uzņēmumā strādā 100 darbinieki un algas failā ir 739 ieraksti. Ir zināms, ka kāds no darbiniekiem ir veicis vairākas darbības, kā rezultātā algas failā darbinieks var paradīties vairākas reizes; Informācija par darbinieka algu nebūs atrodamā algas datnē, ja darbinieks kādā mēnesī nav pildījis darbu.
+The company has 100 employees and there are 739 entries in the salary file. One of the employees is known to have performed several actions which may result in the employee appearing several times in the payroll file; the employee's salary information will not be present in the payroll file if the employee has been absent for a month.
 
-Lai varētu atkodēt informāciju, ir iespēja izmantot tīmekļa kodēšanas rīku https://emn178.github.io/online-tools/crc32.html, kas nodrošina informācijas kodēšanu ar CRC32 algoritmu. (nav informācijas vai Algoritms nav modificēts, ka rezultātā var izmantot tikai kodēšanas rezultātu no tīmekļa platformas.)
+To decode the information, it is possible to use the web encoding tool https://emn178.github.io/online-tools/crc32.html, which encodes the information using the CRC32 algorithm. (No information on whether the algorithm has been modified so that only the encoding result from the web platform can be used.)
 
-Jūsu uzdevums ir izstrādāt programmu, kas:
+Your task is to develop a program that:
 
-    Atver people.csv datni lasīšanai un nolasa pilno darbinieka vārdu uz saraksta datu struktūru izmantojot Python programmēšanas valodu.
-    Izmantojot Selenium bibliotēku, ir nepieciešams iegūt katra darbinieka pilnā vārda kodēšanas rezultātu izmantojot https://emn178.github.io/online-tools/crc32.html tīmekļa riku.
-    Identificēt kāda ir kopēja alga katram darbiniekam. Informācija par algām tiek saglabāta failā salary.xslx, kur A kolonnas vērtība ir darbinieka pilnais vārds kodēta formātā.
-    Pēc programmas izveides ir nepieciešams atbildēt uz testa jautājumiem noradot prasīto informāciju par darbinieka algām.
+    Opens a people.csv file for reading and reads the full employee name into a list data structure using the Python programming language.
+    Using the Selenium library, you need to get the encoding result of each employee's full name using the https://emn178.github.io/online-tools/crc32.html web rick.
+    Identify what is the total salary for each employee. The salary information is stored in the file salary.xslx, where the value of column A is the employee's full name in encoded format.
+    After creating the program, it is necessary to answer the test questions by providing the required information about the salaries of the employees.
 
-Kad programma ir izpildīta, jums ir nepieciešams iesniegt programmas failu <studenta ID numurs.py> formatā E-studiju vidē.
+Once the program is executed, you need to submit the program file in <student ID number.py> format in the E-learning environment.
